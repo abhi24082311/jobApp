@@ -12,4 +12,7 @@ import java.util.List;
 public interface JobRepo extends JpaRepository<JobPost,Integer> {
 
     List<JobPost> findByPostProfileContainingIgnoreCaseOrPostDescContainingIgnoreCase(String postProfile, String postDesc);
+
+    boolean existsByPostProfileIgnoreCaseAndPostDescIgnoreCaseAndRecruiterId(String postProfile, String postDesc, Long recruiterId);
+    boolean existsByPostIdAndRecruiterId(int postId, Long recruiterId);
 }
